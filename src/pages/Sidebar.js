@@ -252,7 +252,7 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, overflowY: 'scroll', height: '800px' }}>
+      <Box component="main" sx={{ flexGrow: 1, height: '800px' }}>
         <div style={{ backgroundColor: '#222222', padding: '6px', display: 'flex', justifyContent: 'space-between' }}>
           <Button variant="contained"
             sx={{
