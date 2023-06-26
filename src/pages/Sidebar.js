@@ -5,7 +5,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import List from '@mui/material/List';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
@@ -18,12 +17,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
-import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-import Button from '@mui/material/Button';
-import CaLender from '../pages/calender'
+import CaLender from '../components/Calender/calender'
 import { useState } from 'react';
 const drawerWidth = 300;
 const openedMixin = (theme) => ({
@@ -99,18 +94,7 @@ export default function MiniDrawer() {
          
             top: '95px',
             backgroundColor: '#32363f',
-            color: 'white',
-          
-          // sm:{
-          //   top:'0',
-          //   backgroundColor: '#32363f',
-          //   color: 'white',
-          // },
-          // xs:{
-          //   top:'0',
-          //   backgroundColor: '#32363f',
-          //   color: 'white',
-          // }
+            color: 'white',         
         },
         '& .MuiDrawer-root': {
           backgroundColor: '#32363f',
@@ -185,7 +169,6 @@ export default function MiniDrawer() {
               px: 2.5,
               textTransform:'none'
             }}
-            // sx={{ textTransform: 'none' }}
               onClick={(e) => setDropDownMenu(!dropdownMenu)}
               endIcon={<ArrowForwardIosIcon />}
               style={{ color: 'white' }}
@@ -279,8 +262,6 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-
-
       <Box component="main" sx={{ flexGrow: 1, }}>
         <CaLender />
       </Box>

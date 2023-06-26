@@ -7,21 +7,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import '../App.css'
-// import './CustomCalendar.css'; // Import your custom CSS file
-
+import '../../App.css'
 const localizer = momentLocalizer(moment);
 const MyCalendar = () => {
   const [date, setDate] = useState(moment().startOf('week'));
-
   const handlePrevWeek = () => {
     setDate(prevDate => prevDate.clone().subtract(7, 'days'));
   };
-
   const handleNextWeek = () => {
     setDate(prevDate => prevDate.clone().add(7, 'days'));
   };
-
   const handleToday = () => {
     setDate(moment().startOf('week'));
   };
@@ -59,9 +54,9 @@ const MyCalendar = () => {
             }} />
             <Typography marginTop={'7px'} color="white" sx={{
                fontSize: {
-                md: '16px', // for medium and larger screens
-                sm: '12px',  // for small screens
-                xs: '12px'   // for extra small screens
+                md: '16px', 
+                sm: '12px',  
+                xs: '12px'  
               }
             
             }}>Week of {label}, {Year}</Typography>
@@ -81,7 +76,6 @@ const MyCalendar = () => {
                 }      
             }} />
           </div>
-         
           <div>
             <Box>
             <Button onClick={handleToday} variant="contained"

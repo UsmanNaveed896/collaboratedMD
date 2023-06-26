@@ -110,7 +110,6 @@ const Navbar = () => {
                                             <MenuItem
                                                 style={{ color: 'white', backgroundColor: '#32363f' }}
                                             >
-
                                                 Start Chat
                                             </MenuItem>
                                             <MenuItem
@@ -135,8 +134,6 @@ const Navbar = () => {
                             <ListItem >
                                 <div style={{ textAlign: 'center' }}>
                                     <Box>
-
-
                                         <QuestionMarkIcon sx={{ marginRight: '8px' }} />
                                     </Box>
                                     <Box>
@@ -167,7 +164,6 @@ const Navbar = () => {
                                         </Button>
                                     </Box>
                                     <div >
-
                                         <Menu
                                             sx={{
                                                 '& .MuiList-root': {
