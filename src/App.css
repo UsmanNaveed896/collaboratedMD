@@ -1,0 +1,41 @@
+.rbc-row-content {
+    display: none;
+}
+.rbc-time-slot {
+    flex: none;
+}
+.rbc-timeslot-group {
+    border-bottom: none;
+    min-height: 35px;
+}
+.rbc-time-gutter.rbc-time-column {
+    padding-top: 8px;
+    text-transform: lowercase;
+}
+.rbc-time-content {
+    border-top: none;
+   
+}
+.rbc-events-container {
+    border-left: 1px solid #495057;
+}
+.rbc-current-time-indicator {
+    height: 0px;
+}
+.rbc-today {
+    background-color: #2222;
+}
+.rbc-time-header-content {
+    display: block;
+}
+.rbc-header {
+    border-bottom: none;
+}
+/* #calendar-container {
+    height: 630px;
+  }
+  @media (max-width: 600px) {
+    #calendar-container {
+      height: 900px;
+    }
+  } */

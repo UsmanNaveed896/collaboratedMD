@@ -42,7 +42,20 @@ const Navbar = () => {
     return (
         <>
             <div>
-                <AppBar position="relative" style={{ backgroundColor: '#32363f' }}>
+                <AppBar position="relative" style={{ backgroundColor: '#32363f' }} 
+                    sx={{
+                        overflowX:{
+                            md:'hidden',
+                            sm:'scroll',
+                            xs:'scroll'
+                        },
+                        width:{
+                            md:'100%',
+                            sm:'112%',
+                            xs:'112%'
+                        }
+                    }}            
+            >
                     <Toolbar>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             <img src={Img} alt="Logo" style={{ height: 50, marginRight: 16 }} />

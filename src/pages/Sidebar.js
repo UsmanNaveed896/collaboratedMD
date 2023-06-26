@@ -23,8 +23,9 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import Button from '@mui/material/Button';
+import CaLender from '../pages/calender'
 import { useState } from 'react';
-const drawerWidth = 340;
+const drawerWidth = 300;
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -95,9 +96,21 @@ export default function MiniDrawer() {
     <Box sx={{ display: 'flex', top: '44px' }}>
       <Drawer variant="permanent" open={open} sx={{
         '& .MuiPaper-root': {
-          top: '95px',
-          backgroundColor: '#32363f',
-          color: 'white',
+         
+            top: '95px',
+            backgroundColor: '#32363f',
+            color: 'white',
+          
+          // sm:{
+          //   top:'0',
+          //   backgroundColor: '#32363f',
+          //   color: 'white',
+          // },
+          // xs:{
+          //   top:'0',
+          //   backgroundColor: '#32363f',
+          //   color: 'white',
+          // }
         },
         '& .MuiDrawer-root': {
           backgroundColor: '#32363f',
@@ -107,8 +120,8 @@ export default function MiniDrawer() {
           <IconButton onClick={handleDrawerClose} sx={{ color: 'white' }}>
             <ChevronLeftIcon />
           </IconButton>
-          <IconButton sx={{ cursor: 'pointer',color: 'white', }} onClick={() => handleDrawerOpen()}>
-          <ChevronRightIcon  />
+          <IconButton sx={{ cursor: 'pointer', color: 'white', }} onClick={() => handleDrawerOpen()}>
+            <ChevronRightIcon />
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -165,15 +178,29 @@ export default function MiniDrawer() {
         </List>
         <List >
           <ListItem disablePadding >
-            <ListItemButton aria-controls="dropdown-menu" aria-haspopup="true" sx={{ textTransform: 'none' }}
+            <ListItemButton aria-controls="dropdown-menu" aria-haspopup="true" 
+             sx={{
+              minHeight: 0,
+              justifyContent: open ? 'initial' : 'center',
+              px: 2.5,
+              textTransform:'none'
+            }}
+            // sx={{ textTransform: 'none' }}
               onClick={(e) => setDropDownMenu(!dropdownMenu)}
               endIcon={<ArrowForwardIosIcon />}
               style={{ color: 'white' }}
             >
-              <ListItemIcon sx={{ color: 'white' }}>
+              <ListItemIcon 
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                  color: 'white',
+                }}
+              >
                 <MailIcon />
               </ListItemIcon>
-              <ListItemText primary={"Appointments"} />
+              <ListItemText primary={"Appointments"} sx={{ opacity: open ? 1 : 0 }}/>
               {dropdownMenu ?
                 <KeyboardArrowDownIcon /> :
                 <ArrowForwardIosIcon />
@@ -226,7 +253,7 @@ export default function MiniDrawer() {
         }
         <Divider />
         <List>
-          {['Patient', 'Claim', 'Pyment', 'Documents', 'Interface', 'Customer Setup', 'Account Administration'].map((text, index) => (
+          {['Patient', 'Claim', 'Pyment', 'Documents', 'Interface', 'Customer Setup'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -252,89 +279,10 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, height: '800px' }}>
-        <div style={{ backgroundColor: '#222222', padding: '6px', display: 'flex', justifyContent: 'space-between' }}>
-          <Button variant="contained"
-            sx={{
-              backgroundColor: '#636363',
-              marginLeft: '14px'
-            }}>
-            Today
-          </Button>
-          <div style={{ display: "flex", gap: '25px' }}>
-            <KeyboardBackspaceIcon sx={{
-              backgroundColor: '#0976be',
-              padding: '5px',
-              paddingLeft: '8px',
-              color: 'white',
-              borderTopLeftRadius: '5px',
-              borderBottomLeftRadius: '5px',
-              cursor: 'pointer'
 
-            }} />
-            <Typography variant="h6" color="white">Week of June 18, 2023</Typography>
-            <ArrowForwardIcon sx={{
-              backgroundColor: '#0976be',
-              padding: '5px',
-              color: 'white',
-              paddingRight: '8px',
-              borderTopRightRadius: '5px',
-              borderBottomRightRadius: '5px',
-              cursor: 'pointer'
-            }} />
-          </div>
-          <div>
-            <Button variant="contained"
-              sx={{
-                backgroundColor: '#636363',
-                marginLeft: '14px'
-              }}>
-              Day
-            </Button>
-            <Button variant="contained"
-              sx={{
-                backgroundColor: '#636363',
-                marginLeft: '14px'
-              }}>
-              Week
-            </Button>
-          </div>
-        </div>
-        <Table sx={{ backgroundColor: '#222222', color: 'white' }}>
-          <TableHead>
-            <TableRow >
-              <TableCell style={{
-                flex: '0 0 4%',
-                border: '1px solid #495057',
-                color: 'white',
-                fontWeight: '800',
-                padding: '8px'
-              }}
-              ></TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800', }}>Monday, June 19</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Tuesday, June 20</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Wednesday, June 21</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Thursday, June 22</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Friday, June 23</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Saturday, June 24</TableCell>
-              <TableCell style={{ flex: '0 0 16%', border: '1px solid #495057', color: 'white', fontWeight: '800' }}>Sunday, June 25</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.time}>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.time}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column2}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column3}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column4}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column5}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column6}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column7}</TableCell>
-                <TableCell style={{ border: '1px solid #495057', color: 'white', padding: '8px' }}>{row.column7}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+
+      <Box component="main" sx={{ flexGrow: 1, }}>
+        <CaLender />
       </Box>
     </Box>
   );
