@@ -122,7 +122,7 @@ const MyCalendar = () => {
         localizer={localizer}
         defaultView="week"
         date={date.toDate()}
-        style={{ height:'700px',backgroundColor: '#222222', color: 'white', }}
+        style={{ height:'900px',backgroundColor: '#222222', color: 'white', }}
         components={{
           toolbar: CustomToolbar,
         }}
