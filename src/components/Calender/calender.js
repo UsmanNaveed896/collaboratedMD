@@ -37,7 +37,7 @@ const MyCalendar = () => {
             fontSize:'12px',
             textTransform:'none'
             }}>
-            Week
+            Today
           </Button>
           </Box>
           <div style={{ display: 'flex', gap: '16px' }}>
